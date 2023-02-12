@@ -8,14 +8,19 @@ public class PlayerController : MonoBehaviour
     public float health = 75f;
     public float maxHealth = 100f;
     
-    public float atkspeed = 1f;
+    public float atkPower = 20f;
+    public float atkSpeed = 1f;
     public float movementSpeed = 7.5f;
     
     Rigidbody2D rb;
 
-
     public delegate void OnHealthChangedDelegate();
     public event OnHealthChangedDelegate OnHealthChanged;
+
+
+    // abilities
+    public bool EnableFlame;
+    public bool EnableIce;
 
 
     // Start is called before the first frame update
@@ -50,11 +55,7 @@ public class PlayerController : MonoBehaviour
             }
 
             if (Input.GetKeyDown(KeyCode.B)) {
-                IncreaseMaxHealth(Random.Range(5, 10));
-            }
-
-            if(Input.GetKeyDown(KeyCode.V)) {
-                DecreaseMaxHealth(Random.Range(5 ,10));
+                ChangeMaxHealth(Random.Range(5, 10));
             }
         */
     }
@@ -71,20 +72,15 @@ public class PlayerController : MonoBehaviour
         OnHealthChanged?.Invoke();
     }
 
-    public void IncreaseMaxHealth(float incAmt) {
-        maxHealth += incAmt;
-        health += incAmt;
-        
-        OnHealthChanged?.Invoke();
-    }
+    public void ChangeMaxHealth(float changeAmt) {
+        maxHealth += changeAmt;
 
-    public void DecreaseMaxHealth(float decAmt) {
-        maxHealth -= decAmt;
-        
         if (maxHealth < health) {
             health = maxHealth;
+        } else {
+            health += changeAmt;
         }
-
+        
         OnHealthChanged?.Invoke();
     }
 }

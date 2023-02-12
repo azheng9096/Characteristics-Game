@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField] float chipSpeed = 3f;
     [SerializeField] Image chipBar;
     [SerializeField] Image fillBar;
+
+    [SerializeField] TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class HealthBar : MonoBehaviour
     }
 
     public void UpdateHealthUI() {
+        healthText.text = player.health.ToString() + "/" + player.maxHealth.ToString();
+
         float fillC = chipBar.fillAmount;
         float fillF = fillBar.fillAmount;
         float hFraction = player.health / player.maxHealth;
