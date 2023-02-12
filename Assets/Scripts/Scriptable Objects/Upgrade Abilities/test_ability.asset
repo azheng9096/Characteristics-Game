@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: test_ability
   m_EditorClassIdentifier: 
   upgradeName: brush
-  description: testing abiltiy...
+  description: testing ability...
   sprite: {fileID: 21300000, guid: 1753ba324c08c254aa7a5f59f3372eb4, type: 3}
+  maxStack: 0
   ability: 0
