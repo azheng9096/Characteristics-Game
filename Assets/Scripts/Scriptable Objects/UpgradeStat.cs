@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Upgrade/UpgradeStat", order = 1)]
 public class UpgradeStat : Upgrade
 {
     public float hp;

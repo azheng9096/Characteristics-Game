@@ -20,7 +20,7 @@ public class UpgradesUI : MonoBehaviour
     {
         
     }
-    
+
 
     void ListUpgrades() {
         foreach (Transform child in UpgradesPanelTrans) {
@@ -31,7 +31,7 @@ public class UpgradesUI : MonoBehaviour
             GameObject obj = Instantiate(UpgradeSlotPrefab, UpgradesPanelTrans);
 
             UpgradeSlot upgradeSlot = obj.GetComponent<UpgradeSlot>();
-            upgradeSlot.AddUpgrade(upgrade, UpgradesManager.instance.upgrades[upgrade]);
+            upgradeSlot.SetUpgrade(upgrade, UpgradesManager.instance.upgrades[upgrade]);
         }
     }
 }

@@ -8,6 +8,7 @@ public class Upgrade : ScriptableObject
     public string upgradeName;
     public string description;
     public Sprite sprite;
+    public int maxStack;
 
     public virtual void Use() {
         Debug.Log("Using " + upgradeName);

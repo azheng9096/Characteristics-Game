@@ -20,8 +20,8 @@ public class UpgradesManager : MonoBehaviour
     }
 
     public void Add(Upgrade upgrade) {
-        if(upgrades.ContainsKey(upgrade)) {
-            upgrades[upgrade] = 0; // initialize count
+        if(!upgrades.ContainsKey(upgrade)) {
+            upgrades.Add(upgrade, 0); // initialize count
         }
 
         upgrades[upgrade]++;

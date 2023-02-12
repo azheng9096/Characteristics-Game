@@ -12,7 +12,7 @@ public class UpgradeSlot : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI qtyText;
 
-    public void AddUpgrade(Upgrade newUpgrade, int newQty) {
+    public void SetUpgrade(Upgrade newUpgrade, int newQty) {
         upgrade = newUpgrade;
         qty = newQty;
 
