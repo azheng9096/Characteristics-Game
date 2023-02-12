@@ -16,7 +16,7 @@ public class ANNA_DEBUG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddPencil() {
@@ -25,5 +25,10 @@ public class ANNA_DEBUG : MonoBehaviour
 
     public void AddBrush() {
         UpgradesManager.instance.Add(brush);
+    }
+
+    public void ShowRewards() {
+        SelectionUI.instance.GenerateUpgradeChoices(SelectionUI.UpgradeType.All, 2);
+        SelectionUI.instance.ToggleSelection(true); // toggle canvas
     }
 }

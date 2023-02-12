@@ -23,7 +23,13 @@ public class UpgradeChoice : MonoBehaviour
 
         icon.sprite = upgrade.sprite;
         nameText.text = upgrade.upgradeName;
-        descriptionText.text = upgrade.description + "<br><br>Currently Owned: " + (UpgradesManager.instance.upgrades[upgrade].ToString());
+
+        int curr_qty = 0;
+        if (UpgradesManager.instance.upgrades.ContainsKey(upgrade)) {
+            curr_qty = UpgradesManager.instance.upgrades[upgrade];
+        }
+
+        descriptionText.text = upgrade.description + "<br><br>Currently Owned: " + (curr_qty.ToString());
     }
 
     public void OnClick() {
