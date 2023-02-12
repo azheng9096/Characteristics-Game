@@ -39,8 +39,9 @@ public class UpgradeChoice : MonoBehaviour
             Debug.LogError("DEV_DEBUG_LOG_ERROR: Upgrade is null!");
 
         // close selection screen
-        selectionScreen.SetActive(false);
-
+        // selectionScreen.SetActive(false);
         // TODO maybe generate choices for next level here
+
+        SelectionUI.instance.CloseSelection();
     }
 }

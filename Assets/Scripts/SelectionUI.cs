@@ -142,5 +142,13 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
+
+    public void CloseSelection() {
+        // close selection screen
+        ToggleSelection(false);
+
+        // TODO maybe generate choices for next level here
+    }
+
     public enum UpgradeType {Stat, Ability, All};
 }
