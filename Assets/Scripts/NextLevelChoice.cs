@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using UnityEngine.SceneManagement;
+
 public class NextLevelChoice : MonoBehaviour
 {
     SelectionUI.UpgradeType upgradeType;
@@ -63,13 +65,20 @@ public class NextLevelChoice : MonoBehaviour
     }
 
     public void OnClick() {
+        // save player data
+        PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Save.SavePlayerData(player);
+
         // save next level upgrade
         Save.SaveLevelData(upgradeType);
 
         NextLevelUI.instance.ToggleSelection(false);
 
-        // TODO generate new level
+        // generate new level
+        int r = Random.Range(0, NextLevelUI.instance.levelSceneIdPool.Length);
+        int nextLevelId = NextLevelUI.instance.levelSceneIdPool[r];
 
         // load new level
+        SceneManager.LoadScene(nextLevelId);
     }
 }

@@ -6,6 +6,9 @@ public class SelectionUI : MonoBehaviour
 {
     public static SelectionUI instance;
 
+    // upgrade type to be generated
+    public SelectionUI.UpgradeType levelUpgradeType;
+
     // list of possible upgrades
     [SerializeField] Upgrade[] healUpgradesPool;
     [SerializeField] Upgrade[] statUpgradesPool;
@@ -34,6 +37,8 @@ public class SelectionUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelUpgradeType = Save.levelRewardType;
+
         onUpgradeChoicesChangedCallback += ListChoices;
     }
 
@@ -162,6 +167,15 @@ public class SelectionUI : MonoBehaviour
 
         // generate and display choices for next level
         NextLevelUI.instance.ToggleSelection(true);
+    }
+
+
+    // NOTE call this upon victory of a stage
+    public void DisplaySelection() {
+        int num = Random.Range(1, 5);
+        GenerateUpgradeChoices(levelUpgradeType, num);
+
+        ToggleSelection(true);
     }
 
     public enum UpgradeType {Heal, Stat, Ability, All};

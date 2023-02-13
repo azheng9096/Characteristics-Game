@@ -6,7 +6,7 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
+    PlayerController player;
 
     float lerpTimer;
     [SerializeField] float chipSpeed = 3f;
@@ -18,6 +18,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.OnHealthChanged +=  ResetLerpTimer;
     }
 

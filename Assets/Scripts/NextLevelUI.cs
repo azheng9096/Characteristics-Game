@@ -13,6 +13,8 @@ public class NextLevelUI : MonoBehaviour
 
     [SerializeField] GameObject NextLevelUICanvas;
 
+    public int[] levelSceneIdPool;
+
     
     void Awake() {
         if (instance == null) {
@@ -27,7 +29,7 @@ public class NextLevelUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        int num = Random.Range(0, upgradeTypesPool.Count);
+        int num = Random.Range(1, upgradeTypesPool.Count + 1);
         List<SelectionUI.UpgradeType> u = GenerateNextLevelChoices(num);
 
         foreach (SelectionUI.UpgradeType upgradeType in u) {

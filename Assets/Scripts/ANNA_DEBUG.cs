@@ -28,7 +28,9 @@ public class ANNA_DEBUG : MonoBehaviour
     }
 
     public void ShowRewards() {
-        SelectionUI.instance.GenerateUpgradeChoices(SelectionUI.UpgradeType.All, 2);
-        SelectionUI.instance.ToggleSelection(true); // toggle canvas
+        // SelectionUI.instance.GenerateUpgradeChoices(SelectionUI.UpgradeType.All, 2);
+        // SelectionUI.instance.ToggleSelection(true); // toggle canvas
+
+        SelectionUI.instance.DisplaySelection();
     }
 }
