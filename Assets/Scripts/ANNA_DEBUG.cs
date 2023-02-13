@@ -33,4 +33,8 @@ public class ANNA_DEBUG : MonoBehaviour
 
         SelectionUI.instance.DisplaySelection();
     }
+
+    public void GameOver() {
+        GameOverUI.instance.ToggleGameOverScreen(true);
+    }
 }
