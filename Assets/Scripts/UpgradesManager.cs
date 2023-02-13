@@ -19,6 +19,10 @@ public class UpgradesManager : MonoBehaviour
         }
     }
 
+    void Start() {
+        LoadData();
+    }
+
     public void Add(Upgrade upgrade) {
         if(!upgrades.ContainsKey(upgrade)) {
             upgrades.Add(upgrade, 0); // initialize count
@@ -32,6 +36,12 @@ public class UpgradesManager : MonoBehaviour
         onUpgradesChangedCallback?.Invoke();
     }
 
+    public void SetUpgrades(Dictionary<Upgrade, int> newUpgrades) {
+        upgrades = newUpgrades;
+
+        onUpgradesChangedCallback?.Invoke();
+    }
+
     public void RemoveAll(Upgrade upgrade) {
         // disable its effects on the player
         for (int i = 0; i < upgrades[upgrade]; i++) {
@@ -41,5 +51,10 @@ public class UpgradesManager : MonoBehaviour
         upgrades.Remove(upgrade);
 
         onUpgradesChangedCallback?.Invoke();
+    }
+
+
+    public void LoadData() {
+        SetUpgrades(Save.upgrades);
     }
 }

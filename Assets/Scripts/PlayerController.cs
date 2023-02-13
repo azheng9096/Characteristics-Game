@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        LoadData();
     }
 
     // Update is called once per frame
@@ -44,20 +46,6 @@ public class PlayerController : MonoBehaviour
 
         // health
         health = Mathf.Clamp(health, 0, maxHealth);
-
-        /* // DEBUG
-            if (Input.GetKeyDown(KeyCode.M)) {
-                TakeDamage(Random.Range(5, 10));
-            }
-
-            if (Input.GetKeyDown(KeyCode.N)) {
-                RestoreHealth(Random.Range(5, 10));
-            }
-
-            if (Input.GetKeyDown(KeyCode.B)) {
-                ChangeMaxHealth(Random.Range(5, 10));
-            }
-        */
     }
 
     public void TakeDamage(float dmg) {
@@ -82,5 +70,13 @@ public class PlayerController : MonoBehaviour
         }
         
         OnHealthChanged?.Invoke();
+    }
+
+    public void LoadData() {
+        health = Save.health;
+        maxHealth = Save.maxHealth;
+        atkPower = Save.atkPower;
+        atkSpeed = Save.atkSpeed;
+        movementSpeed = Save.movementSpeed;
     }
 }
