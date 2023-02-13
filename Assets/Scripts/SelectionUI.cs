@@ -7,6 +7,7 @@ public class SelectionUI : MonoBehaviour
     public static SelectionUI instance;
 
     // list of possible upgrades
+    [SerializeField] Upgrade[] healUpgradesPool;
     [SerializeField] Upgrade[] statUpgradesPool;
     [SerializeField] Upgrade[] abilityUpgradesPool;
 
@@ -94,6 +95,17 @@ public class SelectionUI : MonoBehaviour
         SetUpgradeChoices(new List<Upgrade>());
 
         switch (upgradeType) {
+            case UpgradeType.Heal:
+                List<Upgrade> okHealUpgrades = new List<Upgrade>(healUpgradesPool);
+
+                for (int i = 0; i < num; i++) {
+                    int r = Random.Range(0, healUpgradesPool.Length);
+
+                    AddUpgradeChoices(healUpgradesPool[r]);
+                    okHealUpgrades.Remove(healUpgradesPool[r]);
+                }
+
+                break;
             case UpgradeType.Stat:
                 // filter upgrade pool
                 List<Upgrade> okStatUpgrades = FilterUpgradeChoices(statUpgradesPool);
@@ -127,6 +139,7 @@ public class SelectionUI : MonoBehaviour
             case UpgradeType.All:
                 List<Upgrade> okUpgrades = FilterUpgradeChoices(statUpgradesPool);
                 okUpgrades.AddRange(FilterUpgradeChoices(abilityUpgradesPool));
+                okUpgrades.AddRange(healUpgradesPool);
 
                 // generate ability upgrade choices
                 for (int i = 0; i < num; i++) {
@@ -147,8 +160,9 @@ public class SelectionUI : MonoBehaviour
         // close selection screen
         ToggleSelection(false);
 
-        // TODO maybe generate choices for next level here
+        // generate and display choices for next level
+        NextLevelUI.instance.ToggleSelection(true);
     }
 
-    public enum UpgradeType {Stat, Ability, All};
+    public enum UpgradeType {Heal, Stat, Ability, All};
 }

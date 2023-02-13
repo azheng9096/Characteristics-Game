@@ -15,7 +15,7 @@ public static class Save {
     public static SelectionUI.UpgradeType levelRewardType = SelectionUI.UpgradeType.Stat;
 
 
-    public static void SaveData(PlayerController playerController, SelectionUI.UpgradeType nextLevelRewardType) {
+    public static void SavePlayerData(PlayerController playerController) {
         health = playerController.health;
         maxHealth = playerController.maxHealth;
         atkPower = playerController.atkPower;
@@ -23,7 +23,9 @@ public static class Save {
         movementSpeed = playerController.movementSpeed;
 
         upgrades = UpgradesManager.instance.upgrades;
+    }
 
+    public static void SaveLevelData(SelectionUI.UpgradeType nextLevelRewardType) {
         levelRewardType = nextLevelRewardType;
     }
     
