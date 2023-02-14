@@ -9,6 +9,7 @@ public class GameOverUI : MonoBehaviour
     public static GameOverUI instance;
 
     [SerializeField] GameObject GameOverUICanvas;
+    [SerializeField] GameObject VictoryUICanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class GameOverUI : MonoBehaviour
     // call this to toggle game over ui
     public void ToggleGameOverScreen(bool val) {
         GameOverUICanvas.SetActive(val);
+    }
+
+    public void ToggleVictoryScreen(bool val) {
+        VictoryUICanvas.SetActive(val);
     }
 
     public void OnClick() {
