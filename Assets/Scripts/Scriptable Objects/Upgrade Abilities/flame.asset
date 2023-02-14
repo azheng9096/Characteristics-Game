@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Flame
   description: Bullet ignites the enemy and causes continuous damage to enemy on
-    hit
-  sprite: {fileID: 0}
+    hit (stackable)
+  sprite: {fileID: 21300000, guid: 32cded8b679584d4d99a30a5656cc2bf, type: 3}
   maxStack: 5
   ability: 0
