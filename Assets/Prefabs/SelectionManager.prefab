@@ -351,11 +351,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUpgradeType: 0
   healUpgradesPool:
-  - {fileID: 11400000, guid: f5a00bf1f58a83b45800ff2117a7ff09, type: 2}
+  - {fileID: 11400000, guid: e2679eef5baacc44e8ba1550d4533276, type: 2}
   statUpgradesPool:
-  - {fileID: 11400000, guid: f5a00bf1f58a83b45800ff2117a7ff09, type: 2}
+  - {fileID: 11400000, guid: 41374e1c308e1bb48bbbf58102bf4d54, type: 2}
+  - {fileID: 11400000, guid: 516230bff65bc2e4d8e142ad3af57db7, type: 2}
+  - {fileID: 11400000, guid: ae2aa7f28206ff84490f06b0538fadf3, type: 2}
   abilityUpgradesPool:
-  - {fileID: 11400000, guid: 729af43a37e404f419929476ad0f650c, type: 2}
+  - {fileID: 11400000, guid: a50d74e215908f042a10c903f5b71f77, type: 2}
+  - {fileID: 11400000, guid: 2f1e8dd3e2ddccf49b149548ab576ed0, type: 2}
   upgrades: []
   ChoicesPanelTrans: {fileID: 1538173375819286930}
   UpgradeChoicePrefab: {fileID: 7739138479304368557, guid: a2e13da99267ed44eb5c536734ae9b84, type: 3}

@@ -9,6 +9,9 @@ public static class Save {
     public static float atkSpeed = 1f;
     public static float movementSpeed = 7.5f;
 
+    public static int currLevel = 1;
+    public static int maxLevel = 5;
+
     public static Dictionary<Upgrade, int> upgrades = new Dictionary<Upgrade, int>();
 
     // for next level
@@ -26,6 +29,7 @@ public static class Save {
     }
 
     public static void SaveLevelData(SelectionUI.UpgradeType nextLevelRewardType) {
+        currLevel++;
         levelRewardType = nextLevelRewardType;
     }
     
@@ -35,6 +39,8 @@ public static class Save {
         atkPower = 20f;
         atkSpeed = 1f;
         movementSpeed = 7.5f;
+
+        currLevel = 1;
 
         upgrades = new Dictionary<Upgrade, int>();
 
