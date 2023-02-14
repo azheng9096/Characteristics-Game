@@ -5,9 +5,10 @@ using UnityEngine;
 public static class Save {
     public static float health = 100f;
     public static float maxHealth = 100f;
-    public static float atkPower = 20f;
-    public static float atkSpeed = 1f;
+    public static float atkPower = 30f;
+    public static float atkSpeed = 12f;
     public static float movementSpeed = 7.5f;
+
 
     public static int currLevel = 1;
     public static int maxLevel = 5;

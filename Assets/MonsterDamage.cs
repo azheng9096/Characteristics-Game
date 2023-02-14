@@ -5,7 +5,9 @@ using UnityEngine;
 public class MonsterDamage : MonoBehaviour
 {
     public int damage;
-    public int health = 100;
+    public float health = 100;
+    
+    PlayerController damages;
     // public PlayerHealth playerHealth;
 
     PlayerController player;
@@ -20,19 +22,15 @@ public class MonsterDamage : MonoBehaviour
             player.TakeDamage(damage);
         }
 
-    }
-
-    private void OnTriggerEnter2D (Collider2D other)
-    {
-        if (other.CompareTag("Bullet")){
+        else if (collision.gameObject.CompareTag("Bullet")){
+            float damage = player.returnDamage();
             health -= damage;
-        }
-        if (health <= 0)
-        {
-            Die();
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
-
     public void Die() // made public for debugging purposes
     {
         GameOverUI.instance.DeductEnemyCount();
