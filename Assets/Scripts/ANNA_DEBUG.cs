@@ -37,4 +37,14 @@ public class ANNA_DEBUG : MonoBehaviour
     public void GameOver() {
         GameOverUI.instance.ToggleGameOverScreen(true);
     }
+
+    public void KillEnemy() {
+        GameObject enemyObj = GameObject.FindGameObjectWithTag("Enemy");
+
+        if (enemyObj != null) {
+            MonsterDamage enemy = enemyObj.GetComponent<MonsterDamage>();
+            enemy.Die();
+        }
+        
+    }
 }

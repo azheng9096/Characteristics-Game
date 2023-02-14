@@ -33,8 +33,9 @@ public class MonsterDamage : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die() // made public for debugging purposes
     {
+        GameOverUI.instance.DeductEnemyCount();
         Destroy(gameObject);
     }
 }

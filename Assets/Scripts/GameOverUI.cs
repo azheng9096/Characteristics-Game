@@ -11,8 +11,10 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] GameObject GameOverUICanvas;
     [SerializeField] GameObject VictoryUICanvas;
 
-    // Start is called before the first frame update
-    void Start()
+    bool gameOver = false;
+    int numEnemies = 9999;
+
+    void Awake()
     {
         if (instance == null) {
             instance = this;
@@ -24,10 +26,9 @@ public class GameOverUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EvaluateNextStep();
     }
 
-    // call this to toggle game over ui
     public void ToggleGameOverScreen(bool val) {
         GameOverUICanvas.SetActive(val);
     }
@@ -46,5 +47,28 @@ public class GameOverUI : MonoBehaviour
 
         // load new level
         SceneManager.LoadScene(nextLevelId);
+    }
+
+    public void InitGame(int enemyCount) {
+        gameOver = false;
+        numEnemies = enemyCount;
+    }
+
+    public void DeductEnemyCount() {
+        numEnemies--;
+    }
+
+    public void EvaluateNextStep() {
+        // level complete
+        if (!gameOver && numEnemies <= 0) {
+            gameOver = true;
+            
+            // final level
+            if (Save.currLevel == Save.maxLevel) {
+                ToggleVictoryScreen(true);
+            } else {
+                SelectionUI.instance.DisplaySelection();
+            }
+        }
     }
 }

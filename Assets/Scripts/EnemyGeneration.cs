@@ -15,6 +15,9 @@ public class EnemyGeneration : MonoBehaviour
     {
         int numEnemies = Random.Range(minEnemiesCount, maxEnemiesCount);
         GenerateEnemies(numEnemies);
+
+        // let GameOverUI know how many enemies there are so they can listen for end of level
+        GameOverUI.instance.InitGame(numEnemies);
     }
 
     // Update is called once per frame
