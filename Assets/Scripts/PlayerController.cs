@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
         health -= dmg;
 
         OnHealthChanged?.Invoke();
+
+        if (health <= 0) {
+            GameOverUI.instance.ToggleGameOverScreen(true);
+            Destroy(gameObject);
+        }
     }
 
     public void RestoreHealth(float healAmt) {

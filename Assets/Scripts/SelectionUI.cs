@@ -104,10 +104,12 @@ public class SelectionUI : MonoBehaviour
                 List<Upgrade> okHealUpgrades = new List<Upgrade>(healUpgradesPool);
 
                 for (int i = 0; i < num; i++) {
-                    int r = Random.Range(0, healUpgradesPool.Length);
+                    if (okHealUpgrades.Count > 0) {
+                        int r = Random.Range(0, healUpgradesPool.Length);
 
-                    AddUpgradeChoices(healUpgradesPool[r]);
-                    okHealUpgrades.Remove(healUpgradesPool[r]);
+                        AddUpgradeChoices(healUpgradesPool[r]);
+                        okHealUpgrades.Remove(healUpgradesPool[r]);
+                    }
                 }
 
                 break;
