@@ -16744,12 +16744,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654653958133656776, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
       propertyPath: enemyPrefabs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8654653958133656776, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 6015571052225919236, guid: 38f9acad5f4c24db0a4f24235a649e74, type: 3}
+    - target: {fileID: 8654653958133656776, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6356898964655790378, guid: 39cc4f8383c58ef4ca5e80b02436e66c, type: 3}
     - target: {fileID: 8654653958133656776, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
       propertyPath: spawnpointsPool.Array.size
       value: 44
