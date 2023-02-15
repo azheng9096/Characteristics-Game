@@ -8,6 +8,7 @@ public static class Save {
     public static float atkPower = 30f;
     public static float atkSpeed = 12f;
     public static float movementSpeed = 7.5f;
+    public static float enemyMovementSpeed = 3f;
 
 
     public static int currLevel = 1;
@@ -25,6 +26,7 @@ public static class Save {
         atkPower = playerController.atkPower;
         atkSpeed = playerController.atkSpeed;
         movementSpeed = playerController.movementSpeed;
+        enemyMovementSpeed = playerController.enemyMovementSpeed;
 
         upgrades = UpgradesManager.instance.upgrades;
     }
@@ -40,6 +42,7 @@ public static class Save {
         atkPower = 20f;
         atkSpeed = 1f;
         movementSpeed = 7.5f;
+        enemyMovementSpeed = 3f;
 
         currLevel = 1;
 

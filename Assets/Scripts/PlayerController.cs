@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float maxHealth;    
     public float movementSpeed;
+    public float enemyMovementSpeed = 3f;
 
 
     public Transform RANGEDPOINT;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // abilities
     public bool EnableFlame;
     public bool EnableIce;
+
+
 
 
     // Start is called before the first frame update
@@ -104,5 +107,9 @@ public class PlayerController : MonoBehaviour
 
     public float returnDamage(){
         return atkPower;
+    }
+
+    public float returnEnemyMovementSpeed(){
+        return enemyMovementSpeed;
     }
 }

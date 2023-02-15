@@ -7,7 +7,7 @@ public class MonsterDamage : MonoBehaviour
     public int damage;
     public float health = 100;
     
-    PlayerController damages;
+
     // public PlayerHealth playerHealth;
 
     PlayerController player;

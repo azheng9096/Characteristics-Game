@@ -6,6 +6,7 @@ using UnityEngine;
 public class UpgradeAbility : Upgrade
 {
     public Ability ability;
+    public float enemyMovementSpeed;
 
     public override void Use() {
         base.Use();
@@ -18,6 +19,8 @@ public class UpgradeAbility : Upgrade
             case Ability.Ice:
                 break;
         }
+
+        player.enemyMovementSpeed -= enemyMovementSpeed;
     }
 
     public override void Remove()
@@ -33,6 +36,7 @@ public class UpgradeAbility : Upgrade
             case Ability.Ice:
                 break;
         }
+        player.enemyMovementSpeed += enemyMovementSpeed;
     }
 
     public enum Ability{Flame, Ice};
