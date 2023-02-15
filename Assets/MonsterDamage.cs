@@ -8,10 +8,14 @@ public class MonsterDamage : MonoBehaviour
     public float damage;
     private bool invincible = false;
     public float health = 100;
+    public bool explodeOnImpact;
     // public PlayerHealth playerHealth;
 
     PlayerController player;
     ColoredFlash flash;
+
+    public AudioSource damageNoise;
+
 
     [SerializeField] GameObject FlameParticleEffect;
 
@@ -25,6 +29,9 @@ public class MonsterDamage : MonoBehaviour
 
         maxHealth = health;
         SetMaxHealthUI();
+
+        damageNoise = GetComponent<AudioSource>();
+
     }
 
     void SetMaxHealthUI() {
@@ -44,6 +51,9 @@ public class MonsterDamage : MonoBehaviour
             player.TakeDamage(damage);
             invincible = true;
             StartCoroutine("Invulnerable");
+            if (explodeOnImpact){
+                Die();
+            }
         }
     }
 
@@ -58,7 +68,7 @@ public class MonsterDamage : MonoBehaviour
 
     public void TakeDamage(float dmg) {
         health -= dmg;
-
+        damageNoise.Play();
         if (health <= 0) {
             Die();
         }

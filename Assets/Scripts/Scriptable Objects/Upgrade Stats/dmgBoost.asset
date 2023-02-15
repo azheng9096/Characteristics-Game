@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Damage Booster
   description: Slightly increases damage
-  sprite: {fileID: 21300000, guid: 468f8dfa8fdb4734ea3fe38abf167144, type: 3}
+  sprite: {fileID: 21300000, guid: 27e82bc5597588f40a6eb9e5f17f539f, type: 3}
   maxStack: 10
   hp: 0
   maxHP: 0

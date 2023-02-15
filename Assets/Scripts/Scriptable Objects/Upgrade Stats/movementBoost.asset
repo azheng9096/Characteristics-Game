@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Boots
   description: Slightly increases movement speed
-  sprite: {fileID: 21300000, guid: 4d93e8eec95a90449aefdb182a314357, type: 3}
+  sprite: {fileID: 21300000, guid: 257689c9715c8884cad01c02aad8616a, type: 3}
   maxStack: 10
   hp: 0
   maxHP: 0

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float atkSpeed;
     public float atkPower = 30f;
 
-    
+    public AudioSource shootingNoise;
 
     Rigidbody2D rb;
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        shootingNoise = GetComponent<AudioSource>();
         LoadData();
     }
 
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1")){
             Shoot();
+            shootingNoise.Play();
         }
     }
 
