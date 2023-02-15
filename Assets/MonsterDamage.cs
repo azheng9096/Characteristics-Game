@@ -11,6 +11,8 @@ public class MonsterDamage : MonoBehaviour
 
     PlayerController player;
     ColoredFlash flash;
+
+    [SerializeField] GameObject FlameParticleEffect;
     
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -44,9 +46,35 @@ public class MonsterDamage : MonoBehaviour
         }
     }
 
+    bool dead = false;
     public void Die() // made public for debugging purposes
     {
-        GameOverUI.instance.DeductEnemyCount();
+        if (!dead) { // prevent deduct enemy count more than once
+            dead = true;
+            GameOverUI.instance.DeductEnemyCount();
+        }
         Destroy(gameObject);
+    }
+
+
+    public IEnumerator TakeDamagePerSecond(float dmg) {
+        while (true) {
+            TakeDamage(dmg);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    IEnumerator IgniteCoroutine(float dmg, float duration) {
+        Coroutine takeDmgCoroutine = StartCoroutine(TakeDamagePerSecond(dmg));
+        FlameParticleEffect.SetActive(true);
+
+        yield return new WaitForSeconds(duration);
+
+        StopCoroutine(takeDmgCoroutine);
+        FlameParticleEffect.SetActive(false);
+    }
+
+    public void Ignite(float dmg, float duration) {
+        StartCoroutine(IgniteCoroutine(dmg, duration));
     }
 }

@@ -8,6 +8,8 @@ public static class Save {
     public static float atkPower = 30f;
     public static float atkSpeed = 12f;
     public static float movementSpeed = 7.5f;
+    public static int flameStack = 0;
+    public static int iceStack = 0;
 
 
     public static int currLevel = 1;
@@ -26,6 +28,9 @@ public static class Save {
         atkSpeed = playerController.atkSpeed;
         movementSpeed = playerController.movementSpeed;
 
+        flameStack = playerController.flameStack;
+        iceStack = playerController.iceStack;
+
         upgrades = UpgradesManager.instance.upgrades;
     }
 
@@ -38,7 +43,7 @@ public static class Save {
         health = 100f;
         maxHealth = 100f;
         atkPower = 20f;
-        atkSpeed = 1f;
+        atkSpeed = 12f;
         movementSpeed = 7.5f;
 
         currLevel = 1;

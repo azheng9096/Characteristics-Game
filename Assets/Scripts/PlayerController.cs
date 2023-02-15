@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
 
 
     // abilities
-    public bool EnableFlame;
-    public bool EnableIce;
+    public int flameStack = 0;
+    public int iceStack = 0;
 
 
     // Start is called before the first frame update
