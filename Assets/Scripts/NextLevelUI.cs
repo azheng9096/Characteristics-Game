@@ -29,7 +29,7 @@ public class NextLevelUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        int num = Random.Range(1, upgradeTypesPool.Count + 1);
+        int num = Random.Range(2, upgradeTypesPool.Count + 1);
         List<SelectionUI.UpgradeType> u = GenerateNextLevelChoices(num);
 
         foreach (SelectionUI.UpgradeType upgradeType in u) {

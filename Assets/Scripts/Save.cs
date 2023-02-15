@@ -46,6 +46,9 @@ public static class Save {
         atkSpeed = 12f;
         movementSpeed = 7.5f;
 
+        flameStack = 0;
+        iceStack = 0;
+
         currLevel = 1;
 
         upgrades = new Dictionary<Upgrade, int>();

@@ -174,7 +174,7 @@ public class SelectionUI : MonoBehaviour
 
     // NOTE call this upon victory of a stage
     public void DisplaySelection() {
-        int num = Random.Range(1, 5);
+        int num = Random.Range(2, 5);
         GenerateUpgradeChoices(levelUpgradeType, num);
 
         ToggleSelection(true);
