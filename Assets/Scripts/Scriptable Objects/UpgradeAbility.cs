@@ -14,8 +14,10 @@ public class UpgradeAbility : Upgrade
 
         switch (ability) {
             case Ability.Flame:
+                player.flameStack++;
                 break;
             case Ability.Ice:
+                player.iceStack++;
                 break;
         }
     }
@@ -24,13 +26,15 @@ public class UpgradeAbility : Upgrade
     {
         base.Remove();
 
-        // TODO: undo an instance of the effect of this ability
+        // undo an instance of the effect of this ability
         PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         switch (ability) {
             case Ability.Flame:
+                player.flameStack--;
                 break;
             case Ability.Ice:
+                player.iceStack--;
                 break;
         }
     }

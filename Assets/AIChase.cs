@@ -6,6 +6,7 @@ public class AIChase : MonoBehaviour
 {
     GameObject player;
     public float speed;
+    [SerializeField] GameObject SlowParticleEffect;
     public float minDistance = -1f;
 
     private float distance;
@@ -29,5 +30,29 @@ public class AIChase : MonoBehaviour
                 // transform.rotation = Quaternion.Euler(Vector3.forward *angle);
             }
         }
+    }
+
+    // for ice ability
+    IEnumerator TempReduceSpeed(float newSpeed, float duration) {
+        // set new (slow) speed
+        float origSpeed = speed;
+        speed = newSpeed;
+
+        // turn on particle animation
+        SlowParticleEffect.SetActive(true);
+
+        // wait for duration seconds
+        yield return new WaitForSeconds(duration);
+
+        // reset speed
+        speed = origSpeed;
+
+        // turn off particle animation
+        SlowParticleEffect.SetActive(false);
+    }
+
+    // reduce speed by 25%
+    public void TempReduceSpeed25(float duration) {
+        StartCoroutine(TempReduceSpeed(speed * 0.75f, duration));
     }
 }

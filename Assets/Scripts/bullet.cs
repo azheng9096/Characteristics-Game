@@ -17,11 +17,29 @@ public class bullet : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
+            // damage visual effect
             GameObject effect = Instantiate (hitEffect, transform.position, Quaternion.identity);
             Destroy (effect, 5f);
 
+            // take damage
             MonsterDamage enemy = other.GetComponent<MonsterDamage>();
             enemy.TakeDamage(player.atkPower);
+
+            // ice effect
+            if (player.iceStack > 0) {
+                float duration = 1f * player.iceStack;
+
+                AIChase chase = other.GetComponent<AIChase>();
+                chase.TempReduceSpeed25(duration);
+            }
+
+            // flame effect
+            if (player.flameStack > 0) {
+                float duration = 3f;
+                float dmg = 10f * player.flameStack;
+
+                enemy.Ignite(dmg, duration);
+            }
 
             Destroy (gameObject);
         }
