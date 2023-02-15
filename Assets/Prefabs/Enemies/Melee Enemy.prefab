@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 6015571052225919246}
   - component: {fileID: -3980057688693607931}
   - component: {fileID: 2581491622513431213}
-  - component: {fileID: 8713139249122571650}
   m_Layer: 0
-  m_Name: Speed Enemy
+  m_Name: Melee Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.69803923, g: 0.34509805, b: 0.35088372, a: 1}
+  m_Color: {r: 0.20702024, g: 0.1294945, b: 0.2830189, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 15
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -148,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0612637d455fd5847a62087286247716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   minDistance: -1
 --- !u!114 &2581491622513431213
 MonoBehaviour:
@@ -162,19 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346d8d7f41a987145b9eb61f2bdc4d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   health: 100
---- !u!114 &8713139249122571650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015571052225919236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ce9bb2d017f4ab2aca0ab4f884d6c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: 3d781f1282c0248b1aaf4793113b26a4, type: 2}
-  duration: 0.125
