@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ice
   m_EditorClassIdentifier: 
   upgradeName: Ice
-  description: Bullets slows the enemy for a temporary period of time (stackable)
+  description: Bullets slows the enemy movement by 25% for 1 second (stackable by
+    duration)
   sprite: {fileID: 21300000, guid: d835f06e5786d3444859ff26cce494b4, type: 3}
   maxStack: 5
   ability: 1

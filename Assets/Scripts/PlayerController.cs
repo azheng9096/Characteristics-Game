@@ -100,6 +100,8 @@ public class PlayerController : MonoBehaviour
         atkPower = Save.atkPower;
         atkSpeed = Save.atkSpeed;
         movementSpeed = Save.movementSpeed;
+        flameStack = Save.flameStack;
+        iceStack = Save.iceStack;
     }
 
     public float returnDamage(){

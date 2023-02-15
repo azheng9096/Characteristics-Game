@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: flame
   m_EditorClassIdentifier: 
   upgradeName: Flame
-  description: Bullet ignites the enemy and causes continuous damage to enemy on
-    hit (stackable)
+  description: Bullet ignites the enemy and deals 5 dmg to enemy per second for 3
+    seconds on hit (stackable by damage)
   sprite: {fileID: 21300000, guid: 32cded8b679584d4d99a30a5656cc2bf, type: 3}
   maxStack: 5
   ability: 0

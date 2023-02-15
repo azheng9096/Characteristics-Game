@@ -11,6 +11,8 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] GameObject GameOverUICanvas;
     [SerializeField] GameObject VictoryUICanvas;
 
+    [SerializeField] GameObject BufferCanvas;
+
     bool gameOver = false;
     public int numEnemies = 9999;
 
@@ -82,11 +84,28 @@ public class GameOverUI : MonoBehaviour
             gameOver = true;
             
             // final level
-            if (Save.currLevel == Save.maxLevel) {
-                ToggleVictoryScreen(true);
-            } else {
-                SelectionUI.instance.DisplaySelection();
-            }
+            /*
+                if (Save.currLevel == Save.maxLevel) {
+                    ToggleVictoryScreen(true);
+                } else {
+                    SelectionUI.instance.DisplaySelection();
+                }
+            */
+
+            StartCoroutine(ScreenToggle());
+        }
+    }
+
+    IEnumerator ScreenToggle() {
+        BufferCanvas.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        BufferCanvas.SetActive(false);
+
+        // final level
+        if (Save.currLevel == Save.maxLevel) {
+            ToggleVictoryScreen(true);
+        } else {
+            SelectionUI.instance.DisplaySelection();
         }
     }
 }
