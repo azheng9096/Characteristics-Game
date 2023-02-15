@@ -10,7 +10,6 @@ public class EnemyBulletScript : MonoBehaviour
     public float force;
     private float timer;
     PlayerController player2;
-    public AudioSource shootingNoise;
 
     public int damage;
     // Start is called before the first frame update
@@ -27,8 +26,11 @@ public class EnemyBulletScript : MonoBehaviour
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0,0, rot + 90);
 
-        shootingNoise = GetComponent<AudioSource>();
-        shootingNoise.Play();
+        // damage increase by level
+        damage *= Save.currLevel;
+
+        // hardcore stack
+        damage += (Save.hardcoreStack * 15);
     }
 
     // Update is called once per frame

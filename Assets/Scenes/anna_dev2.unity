@@ -1124,7 +1124,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bca1c84f57177d04e92e29e8ea061596, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1640,6 +1640,7 @@ MonoBehaviour:
   bullet: {fileID: 7080514506457682979, guid: 5562cf83277d445fcba27c0e39154317, type: 3}
   atkSpeed: 12
   atkPower: 20
+  shootingNoise: {fileID: 0}
   flameStack: 0
   iceStack: 0
 --- !u!1 &770292576
