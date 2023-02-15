@@ -27,6 +27,7 @@ public class EnemyGeneration : MonoBehaviour
     }
 
     public void GenerateEnemies(int num) {
+        print("hello");
         List<Transform> spawnpoints = new List<Transform>(spawnpointsPool);
 
         for (int i = 0; i < num; i++) {

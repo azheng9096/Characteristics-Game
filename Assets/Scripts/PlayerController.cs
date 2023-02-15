@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float health = 75f;
-    public float maxHealth = 100f;
+    public float health;
+    public float maxHealth;    
+    public float movementSpeed;
+
+
+    public Transform RANGEDPOINT;
+    public GameObject bullet;
+    public float atkSpeed;
+    public float atkPower = 30f;
+
     
-    public float atkPower = 20f;
-    public float atkSpeed = 1f;
-    public float movementSpeed = 7.5f;
-    
+
     Rigidbody2D rb;
 
     public delegate void OnHealthChangedDelegate();
@@ -46,6 +51,18 @@ public class PlayerController : MonoBehaviour
 
         // health
         health = Mathf.Clamp(health, 0, maxHealth);
+
+
+        if(Input.GetButtonDown("Fire1")){
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        GameObject bullts = Instantiate(bullet, RANGEDPOINT.position, RANGEDPOINT.rotation);
+        Rigidbody2D rb = bullts.GetComponent<Rigidbody2D>();
+        rb.AddForce(RANGEDPOINT.up * atkSpeed, ForceMode2D.Impulse);
     }
 
     public void TakeDamage(float dmg) {
@@ -83,5 +100,9 @@ public class PlayerController : MonoBehaviour
         atkPower = Save.atkPower;
         atkSpeed = Save.atkSpeed;
         movementSpeed = Save.movementSpeed;
+    }
+
+    public float returnDamage(){
+        return atkPower;
     }
 }
