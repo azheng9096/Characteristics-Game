@@ -20,4 +20,4 @@ MonoBehaviour:
   maxHP: 0
   atkPower: 0
   atkSpd: 0
-  movementSpeed: 0.25
+  movementSpeed: 0.75

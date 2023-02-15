@@ -19,5 +19,5 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   atkPower: 0
-  atkSpd: 2
+  atkSpd: 3
   movementSpeed: 0
