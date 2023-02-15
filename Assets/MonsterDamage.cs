@@ -8,7 +8,6 @@ public class MonsterDamage : MonoBehaviour
     public float health = 100;
     
     PlayerController damages;
-    // public PlayerHealth playerHealth;
 
     PlayerController player;
     ColoredFlash flash;
@@ -20,20 +19,19 @@ public class MonsterDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Player"){
-            // playerHealth.TakeDamage(damage);
             player.TakeDamage(damage);
         }
+    }
 
-        else if (collision.gameObject.CompareTag("Bullet")){
-            float damage = player.returnDamage();
-            flash.Flash(Color.red);
-            health -= damage;
-            if (health <= 0)
-            {
-                Die();
-            }
+    public void TakeDamage(float dmg) {
+        flash.Flash(Color.red);
+        health -= dmg;
+
+        if (health <= 0) {
+            Die();
         }
     }
+
     public void Die() // made public for debugging purposes
     {
         GameOverUI.instance.DeductEnemyCount();
