@@ -348,9 +348,9 @@ MonoBehaviour:
   icon: {fileID: 5556498765636958111}
   nameText: {fileID: 5556498765754759855}
   healSprite: {fileID: 21300000, guid: 6ed2f9391f43fa64abc1bd84d3b1878e, type: 3}
-  statSprite: {fileID: 21300000, guid: 9135327b191640141915efeb6f52fdd0, type: 3}
-  abilitySprite: {fileID: 21300000, guid: 3b1e4cf46e0885b489e5eddd2fe87749, type: 3}
-  allSprite: {fileID: 21300000, guid: 619207ab2bc09bb4da3650bd27db6f26, type: 3}
+  statSprite: {fileID: 21300000, guid: d4f2687fad3986b40ab2248646cfb4af, type: 3}
+  abilitySprite: {fileID: 21300000, guid: a31954f7067dbce4a8000ff878bd42ac, type: 3}
+  allSprite: {fileID: 21300000, guid: de1f3b0ea5df69b4dad538c8e0ab15e8, type: 3}
 --- !u!114 &5680195828198931870
 MonoBehaviour:
   m_ObjectHideFlags: 0
