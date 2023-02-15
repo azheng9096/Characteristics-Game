@@ -12,7 +12,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] GameObject VictoryUICanvas;
 
     bool gameOver = false;
-    int numEnemies = 9999;
+    public int numEnemies = 9999;
 
     void Awake()
     {
@@ -38,6 +38,24 @@ public class GameOverUI : MonoBehaviour
     }
 
     public void OnClick() {
+        // reset progress
+        Save.ResetData();
+
+        // generate new level
+        int r = Random.Range(0, NextLevelUI.instance.levelSceneIdPool.Length);
+        int nextLevelId = NextLevelUI.instance.levelSceneIdPool[r];
+
+        // load new level
+        SceneManager.LoadScene(nextLevelId);
+    }
+
+    public void OnClickHardcore() {
+        Save.defaultMaxHealth -= 20;
+
+        if (Save.defaultMaxHealth < 1) {
+            Save.defaultMaxHealth = 1;
+        }
+
         // reset progress
         Save.ResetData();
 

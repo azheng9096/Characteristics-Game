@@ -11,6 +11,14 @@ public static class Save {
     public static int flameStack = 0;
     public static int iceStack = 0;
 
+    public static float defaultHealth = 100f;
+    public static float defaultMaxHealth = 100f;
+    public static float defaultAtkPower = 30f;
+    public static float defaultAtkSpeed = 12f;
+    public static float defaultMovementSpeed = 7.5f;
+    public static int defaultFlameStack = 0;
+    public static int defaultIceStack = 0;
+
 
     public static int currLevel = 1;
     public static int maxLevel = 5;
@@ -40,14 +48,14 @@ public static class Save {
     }
     
     public static void ResetData() {
-        health = 100f;
-        maxHealth = 100f;
-        atkPower = 20f;
-        atkSpeed = 12f;
-        movementSpeed = 7.5f;
+        health = defaultHealth;
+        maxHealth = defaultMaxHealth;
+        atkPower = defaultAtkPower;
+        atkSpeed = defaultAtkSpeed;
+        movementSpeed = defaultMovementSpeed;
 
-        flameStack = 0;
-        iceStack = 0;
+        flameStack = defaultFlameStack;
+        iceStack = defaultIceStack;
 
         currLevel = 1;
 
