@@ -16,7 +16,7 @@ public class ANNA_DEBUG2 : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.N) && Input.GetKey(KeyCode.B)) {
-            DebugUI.SetActive(!DebugUI.activeInHierarchy);
+            DebugUI.SetActive(true);
         }
     }
 }
