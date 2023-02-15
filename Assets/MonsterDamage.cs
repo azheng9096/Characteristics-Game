@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterDamage : MonoBehaviour
 {
@@ -13,11 +14,28 @@ public class MonsterDamage : MonoBehaviour
     ColoredFlash flash;
 
     [SerializeField] GameObject FlameParticleEffect;
+
+    float maxHealth;
+    [SerializeField] Slider healthBar;
     
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         damage *= Save.currLevel;
         health *= Save.currLevel;
+
+        maxHealth = health;
+        SetMaxHealthUI();
+    }
+
+    void SetMaxHealthUI() {
+        if (healthBar != null) {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = health;
+        }
+    }
+    void SetHealthUI() {
+        if (healthBar != null) 
+            healthBar.value = health;
     }
 
     private void OnCollisionStay2D(Collision2D collision){
@@ -44,6 +62,8 @@ public class MonsterDamage : MonoBehaviour
         if (health <= 0) {
             Die();
         }
+
+        SetHealthUI();
     }
 
     bool dead = false;
