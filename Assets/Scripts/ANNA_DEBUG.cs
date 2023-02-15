@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ANNA_DEBUG : MonoBehaviour
 {
-    [SerializeField] Upgrade pencil;
-    [SerializeField] Upgrade brush;
+    [SerializeField] Upgrade flame;
+    [SerializeField] Upgrade ice;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +19,12 @@ public class ANNA_DEBUG : MonoBehaviour
 
     }
 
-    public void AddPencil() {
-        UpgradesManager.instance.Add(pencil);
+    public void AddFlame() {
+        UpgradesManager.instance.Add(flame);
     }
 
-    public void AddBrush() {
-        UpgradesManager.instance.Add(brush);
+    public void AddIce() {
+        UpgradesManager.instance.Add(ice);
     }
 
     public void ShowRewards() {

@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e958a50c4ae91414780d41fce9002e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pencil: {fileID: 11400000, guid: f5a00bf1f58a83b45800ff2117a7ff09, type: 2}
-  brush: {fileID: 11400000, guid: 729af43a37e404f419929476ad0f650c, type: 2}
+  flame: {fileID: 11400000, guid: a50d74e215908f042a10c903f5b71f77, type: 2}
+  ice: {fileID: 11400000, guid: 2f1e8dd3e2ddccf49b149548ab576ed0, type: 2}
 --- !u!114 &424279815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,14 +323,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424279813}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1666097883}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1921670649}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -469,7 +469,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 424279814}
         m_TargetAssemblyTypeName: ANNA_DEBUG, Assembly-CSharp
-        m_MethodName: AddPencil
+        m_MethodName: AddFlame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -701,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4817438199392315234, guid: 477968b181ec63a429d35452279d0177, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4817438199392315234, guid: 477968b181ec63a429d35452279d0177, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4063,7 +4063,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4203544791142118789, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4203544791142118789, guid: d16320319ca5bf3409e35ce28c6c1984, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4568,7 +4568,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 424279814}
         m_TargetAssemblyTypeName: ANNA_DEBUG, Assembly-CSharp
-        m_MethodName: AddBrush
+        m_MethodName: AddIce
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4616,6 +4616,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858379756}
   m_CullTransparentMesh: 1
+--- !u!1 &1921670647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921670649}
+  - component: {fileID: 1921670648}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1921670648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921670647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c15f54ad81d630489b545cfdc7b5cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugUI: {fileID: 424279813}
+--- !u!4 &1921670649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921670647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 424279818}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930492429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,7 +4855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add Brush (test ability)
+  m_text: Add Ice (test ability)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4944,7 +4990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add Pencil (test stat)
+  m_text: Add Flame (test ability)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -21,7 +21,7 @@ public static class Save {
 
 
     public static int currLevel = 1;
-    public static int maxLevel = 5;
+    public static int maxLevel = 3;
 
     public static Dictionary<Upgrade, int> upgrades = new Dictionary<Upgrade, int>();
 
