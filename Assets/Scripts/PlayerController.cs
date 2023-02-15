@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     
 
     Rigidbody2D rb;
+    ColoredFlash flash;
 
     public delegate void OnHealthChangedDelegate();
     public event OnHealthChangedDelegate OnHealthChanged;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        flash = GetComponent<ColoredFlash>();
         LoadData();
     }
 
@@ -66,8 +67,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void TakeDamage(float dmg) {
+        flash.Flash(Color.red);
         health -= dmg;
-
+        
         OnHealthChanged?.Invoke();
 
         if (health <= 0) {

@@ -9880,6 +9880,7 @@ GameObject:
   - component: {fileID: 6015571052225919246}
   - component: {fileID: -3980057688693607931}
   - component: {fileID: 2581491622513431213}
+  - component: {fileID: 5708055594995651495}
   m_Layer: 0
   m_Name: Speed Enemy
   m_TagString: Enemy
@@ -10034,7 +10035,22 @@ MonoBehaviour:
   damage: 5
   health: 100
   FlameParticleEffect: {fileID: 5685741597730134691}
+  deathParticles: {fileID: 8047360430197191138, guid: a10998e0342304c02b7a70f4984f3e4f, type: 3}
   healthBar: {fileID: 9127080137381802698}
+--- !u!114 &5708055594995651495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015571052225919236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ce9bb2d017f4ab2aca0ab4f884d6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 3d781f1282c0248b1aaf4793113b26a4, type: 2}
+  duration: 0.1
 --- !u!1 &6228563831430136186
 GameObject:
   m_ObjectHideFlags: 0

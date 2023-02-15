@@ -9905,6 +9905,7 @@ GameObject:
   - component: {fileID: 6015571052225919246}
   - component: {fileID: -3980057688693607931}
   - component: {fileID: 2581491622513431213}
+  - component: {fileID: -4372268254106831525}
   m_Layer: 0
   m_Name: Melee Enemy
   m_TagString: Enemy
@@ -10059,7 +10060,22 @@ MonoBehaviour:
   damage: 20
   health: 200
   FlameParticleEffect: {fileID: 5202519741474066988}
+  deathParticles: {fileID: 8047360430197191138, guid: 033ca312fee9841ec94996f4704eefb6, type: 3}
   healthBar: {fileID: 7986612474202283244}
+--- !u!114 &-4372268254106831525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015571052225919236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ce9bb2d017f4ab2aca0ab4f884d6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 3d781f1282c0248b1aaf4793113b26a4, type: 2}
+  duration: 0.1
 --- !u!1 &8681456876628600960
 GameObject:
   m_ObjectHideFlags: 0

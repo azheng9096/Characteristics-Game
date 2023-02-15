@@ -14,6 +14,8 @@ public class MonsterDamage : MonoBehaviour
     ColoredFlash flash;
 
     [SerializeField] GameObject FlameParticleEffect;
+    
+    public GameObject deathParticles;
 
     float maxHealth;
     [SerializeField] Slider healthBar;
@@ -22,6 +24,7 @@ public class MonsterDamage : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         damage *= Save.currLevel;
         health *= Save.currLevel;
+        flash = GetComponent<ColoredFlash>();
 
         maxHealth = health;
         SetMaxHealthUI();
@@ -58,9 +61,11 @@ public class MonsterDamage : MonoBehaviour
 
     public void TakeDamage(float dmg) {
         health -= dmg;
+        flash.Flash(Color.red);
 
         if (health <= 0) {
             Die();
+            Instantiate(deathParticles, gameObject.transform.position, Quaternion.identity);
         }
 
         SetHealthUI();
@@ -74,6 +79,7 @@ public class MonsterDamage : MonoBehaviour
             GameOverUI.instance.DeductEnemyCount();
         }
         Destroy(gameObject);
+        
     }
 
 

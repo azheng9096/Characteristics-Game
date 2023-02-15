@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: -8828380526504368593}
   - component: {fileID: -3045789387925580566}
   - component: {fileID: 8168007009934936180}
+  - component: {fileID: -3815614680522679995}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -432,6 +433,7 @@ MonoBehaviour:
   damage: 5
   health: 100
   FlameParticleEffect: {fileID: 8449674140348911917}
+  deathParticles: {fileID: 8047360430197191138, guid: d83e4aaec042a4e989ddd89d587ffa4d, type: 3}
   healthBar: {fileID: 6103526183519830284}
 --- !u!58 &8168007009934936180
 CircleCollider2D:
@@ -449,6 +451,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &-3815614680522679995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356898964655790378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ce9bb2d017f4ab2aca0ab4f884d6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 3d781f1282c0248b1aaf4793113b26a4, type: 2}
+  duration: 0.1
 --- !u!1 &7656813688431133415
 GameObject:
   m_ObjectHideFlags: 0
