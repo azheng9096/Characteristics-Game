@@ -15,31 +15,22 @@ public class MonsterDamage : MonoBehaviour
     ColoredFlash flash;
 
     public AudioSource damageNoise;
-    public GameObject deathParticles;
-
 
 
     [SerializeField] GameObject FlameParticleEffect;
 
     float maxHealth;
     [SerializeField] Slider healthBar;
-
     
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         damage *= Save.currLevel;
         health *= Save.currLevel;
 
-        // hardcore stack
-        damage += (Save.hardcoreStack * 15);
-        health += (Save.hardcoreStack * 50);
-
         maxHealth = health;
         SetMaxHealthUI();
 
         damageNoise = GetComponent<AudioSource>();
-        flash = GetComponent<ColoredFlash>();
-
 
     }
 
@@ -77,13 +68,9 @@ public class MonsterDamage : MonoBehaviour
 
     public void TakeDamage(float dmg) {
         health -= dmg;
-        flash.Flash(Color.red);
-
-        damageNoise.Play();
+        damageNoise.Play()
         if (health <= 0) {
             Die();
-            Instantiate(deathParticles, gameObject.transform.position, Quaternion.identity);
-
         }
 
         SetHealthUI();
