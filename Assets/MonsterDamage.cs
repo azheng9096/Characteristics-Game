@@ -23,6 +23,10 @@ public class MonsterDamage : MonoBehaviour
         damage *= Save.currLevel;
         health *= Save.currLevel;
 
+        // hardcore stack
+        damage += (Save.hardcoreStack * 15);
+        health += (Save.hardcoreStack * 50);
+
         maxHealth = health;
         SetMaxHealthUI();
     }

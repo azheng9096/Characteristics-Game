@@ -58,6 +58,8 @@ public class GameOverUI : MonoBehaviour
             Save.defaultMaxHealth = 1;
         }
 
+        Save.hardcoreStack++;
+
         // reset progress
         Save.ResetData();
 

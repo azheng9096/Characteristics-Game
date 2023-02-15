@@ -887,7 +887,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Start with 20 less max hp, min 1 hp; This action cannot be reverted'
+  m_text: '*Start with 20 less max hp, min 1 hp; Enemy health and damage increase;
+    This action cannot be reverted'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0049e65896be0c6428ec053b232f2564, type: 2}
   m_sharedMaterial: {fileID: -7559669454081253601, guid: 0049e65896be0c6428ec053b232f2564, type: 2}

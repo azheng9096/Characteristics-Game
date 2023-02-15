@@ -23,6 +23,8 @@ public static class Save {
     public static int currLevel = 1;
     public static int maxLevel = 3;
 
+    public static int hardcoreStack = 0;
+
     public static Dictionary<Upgrade, int> upgrades = new Dictionary<Upgrade, int>();
 
     // for next level
